@@ -1,0 +1,25 @@
+public class Shape {
+    private String type;
+
+    public Shape(String type) {
+        this.type = type;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public double calculateArea() {
+        double area = 0.0;
+        if (type.equals("circle")) {
+            double radius = 5.0;
+            area = Math.PI * radius * radius;
+        } else if (type.equals("rectangle")) {
+            double width = 4.0;
+            double height = 6.0;
+            area = width * height;
+        }
+        // добавление новых типов фигур потребует изменения этого метода
+        return area;
+    }
+}
