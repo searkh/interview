@@ -1,0 +1,35 @@
+public interface UserService {
+    void saveUser(User user);
+}
+
+@Service
+public class UserServiceImpl implements UserService {
+
+    @Autowired
+    private UserRepository userRepository;
+
+    @Override
+    @Transactional
+    public void saveUser(User user) {
+        userRepository.save(user);
+    }
+
+    public void deleteUser(User user) {
+        userRepository.delete(user);
+    }
+
+    public void test(User user){
+       processUser(user)
+   }
+    
+    @Transactional
+    public void processUser(User user) {
+        userRepository.save(user);
+    } 
+    
+    @Transactional
+    private void validateUser(User user) {
+        userRepository.save(user);
+    } 
+    
+}
